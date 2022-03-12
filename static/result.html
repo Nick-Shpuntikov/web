@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
 
@@ -42,7 +43,7 @@
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <a href="#" class="nav-link text-secondary">
+              <a href="ecg.html" class="nav-link text-secondary">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"></use></svg>
                 Главная
               </a>
@@ -76,52 +77,24 @@
       </div>
     </div>
 
-<!--Заголовок-->
-<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-      <h1 class="display-4 fw-normal">Узнать качество ЭКГ</h1>
-      <p class="fs-5 text-muted">Оцените качество ЭКГ и узнайте подходит ли выбранная запись для дальнейшего исследования</p>
-    </div>
-
-<!--Место для файла-->
-<div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-          <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">Загрузите ваш файл</h4>
-          </div>
-          <div class="card-body">
 
 
-<!--Загрузка самого файла (пока только картинка jpg)-->
-            <div style= class="container">
-              <div class="row mb-3">
-                  <div class="col-md-12">
-                     <form action="upload-one-file.php" method="POST" enctype="multipart/form-data" class="form-inline md-form">
 
-                          <div class="input-group">
-                              <div class="custom-file">
-                                  <input type="file" name="file_img" id="file_img" required>
-                              </div>
-                          </div>
 
-                          <button type="submit" name="upload_image" class="btn btn-primary">Загрузить файл</button>
-                      </form>
-                  </div>
-             </div>
-            </div>
-
-            <ul class="list-unstyled mt-3 mb-4">
-            </ul>
-          </div>
+<!--Результат исследования-->
+<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="heart.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Проверка качества ЭКГ выполнена</h1>
+        <p class="lead">Состояние ЭКГ: Содержит шум</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Продолжить работу</button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Назад</button>
         </div>
       </div>
-
-
-<!--Кнопка "Оценить"-->
-<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <a href='/static/result.html' type="button" class="btn btn-primary btn-lg px-4 gap-3">Оценить</a>
-      </div>
-
-
+    </div>
 
 
 
@@ -140,4 +113,7 @@
   </footer>
 </div>
 
+
+
 </body>
+</html>

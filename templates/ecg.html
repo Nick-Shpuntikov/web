@@ -4,13 +4,23 @@
 {% endblock %}
 
 {% block body %}
-<!--Заголовок-->
-<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-      <h1 class="display-4 fw-normal">Узнать качество ЭКГ</h1>
-      <p class="fs-5 text-muted">Оцените качество ЭКГ и узнайте подходит ли выбранная запись для дальнейшего исследования</p>
-    </div>
+<div class="svg-container">
+    <!-- I crated SVG with: https://codepen.io/anthonydugois/pen/mewdyZ -->
+    <svg viewbox="0 0 800 400" class="svg">
+      <path id="curve" fill="#50c6d8" d="M 800 300 Q 400 350 0 300 L 0 0 L 800 0 L 800 300 Z">
+      </path>
+    </svg>
+  </div>
 
-<!--Место для файла-->
+
+<!--Заголовок-->
+  <header>
+    <h1>Узнать качество ЭКГ</h1>
+    <h6>Оцените качество ЭКГ и узнайте подходит ли выбранная запись для дальнейшего исследования</h6>
+  </header>
+
+  <main>
+    <!--Место для файла-->
 <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm">
           <div class="card-header py-3">
@@ -48,6 +58,8 @@
 <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         <a href='/static/result.html' type="button" class="btn btn-primary btn-lg px-4 gap-3">Оценить</a>
       </div>
+  </main>
+
 {% endblock %}
 
 

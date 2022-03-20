@@ -1,6 +1,9 @@
 from flask import Flask, render_template, url_for
+import pandas as pd
 
 app = Flask(__name__)
+
+
 
 @app.route('/')
 @app.route('/home')
@@ -9,7 +12,8 @@ def home():
 
 @app.route('/about_us')
 def about_us():
-    return render_template('about_us.html')
+    data = pd.read_csv('ss.csv', sep=",")
+    return render_template('about_us.html', tables=[data.to_html()], titles=[''])
 
 @app.route('/products')
 def products():

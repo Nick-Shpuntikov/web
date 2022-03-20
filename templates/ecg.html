@@ -54,12 +54,100 @@
       </div>
 
 
-<!--Кнопка "Оценить"-->
-<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <a href='/static/result.html' type="button" class="btn btn-primary btn-lg px-4 gap-3">Оценить</a>
-      </div>
-  </main>
+<!--&lt;!&ndash;Кнопка "Оценить"&ndash;&gt;-->
+<!--<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">-->
+<!--        <a href='/static/result.html' type="button" class="btn btn-primary btn-lg px-4 gap-3">Оценить</a>-->
+<!--      </div>-->
 
+
+<!--Таблица-->
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ФИО</th>
+      <th scope="col">Дата съема</th>
+      <th scope="col">ЭКГ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Иванов И. И.</td>
+      <td>10.03.22</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Петухов П.П.</td>
+      <td>02.03.22</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Козлов К.К.</td>
+      <td>02.03.22</td>
+      <td>[]</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+ <!--Поле прямоугольное-->
+<div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Выберите методы оценки качества</h4>
+          </div>
+          <div class="card-body">
+<!--Чекбоксы-->
+              <div>
+                <div class="box">
+                 <input id="one" type="checkbox">
+                    <span class="check"></span>
+                    <label for="one">Метод 1</label>
+                </div>
+                <div class="box">
+                 <input id="two" type="checkbox">
+                 <span class="check"></span>
+                    <label for="two">Метод 2</label>
+                </div>
+                </div>
+              <p>
+                 <a href="#" class="btn btn-primary my-2">Оценить</a>
+                <a href="#" class="btn btn-secondary my-2">Скачать</a>
+             </p>
+                  <ul class="list-unstyled mt-3 mb-4">
+            </ul>
+          </div>
+        </div>
+</div>
+
+
+
+
+<!--Аналитика-->
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Аналитика</h4>
+          </div>
+          <div class="card-body">
+<!--что-то-->
+
+
+
+
+      <ul class="list-unstyled mt-3 mb-4">
+            </ul>
+          </div>
+        </div>
+</div>
+
+
+</main>
 {% endblock %}
 
 

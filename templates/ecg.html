@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}
+Проверка ЭКГ
+{% endblock %}
+
+{% block body %}
+<!--Заголовок-->
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Узнать качество ЭКГ</h1>
+      <p class="fs-5 text-muted">Оцените качество ЭКГ и узнайте подходит ли выбранная запись для дальнейшего исследования</p>
+    </div>
+
+<!--Место для файла-->
+<div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Загрузите ваш файл</h4>
+          </div>
+          <div class="card-body">
+
+
+<!--Загрузка самого файла (пока только картинка jpg)-->
+            <div style= class="container">
+              <div class="row mb-3">
+                  <div class="col-md-12">
+                     <form action="upload-one-file.php" method="POST" enctype="multipart/form-data" class="form-inline md-form">
+
+                          <div class="input-group">
+                              <div class="custom-file">
+                                  <input type="file" name="file_img" id="file_img" required>
+                              </div>
+                          </div>
+
+                          <button type="submit" name="upload_image" class="btn btn-primary">Загрузить файл</button>
+                      </form>
+                  </div>
+             </div>
+            </div>
+
+            <ul class="list-unstyled mt-3 mb-4">
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+<!--Кнопка "Оценить"-->
+<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href='/static/result.html' type="button" class="btn btn-primary btn-lg px-4 gap-3">Оценить</a>
+      </div>
+{% endblock %}
+
+

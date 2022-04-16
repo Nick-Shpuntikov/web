@@ -342,12 +342,42 @@
 
 
 
+
+          <!--Круговая диаграмма-->
+  <script src="https://www.google.com/jsapi"></script>
+  <script>
+   google.load("visualization", "1", {packages:["corechart"]});
+   google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+     ['Газ', 'Объём'],
+     ['Качественные',     75],
+     ['Некачественные', 25]
+    ]);
+    var options = {
+     title: 'Результаты анализа',
+     is3D: true,
+    };
+    var chart = new google.visualization.PieChart(document.getElementById('air'));
+     chart.draw(data, options);
+   }
+  </script>
+          <br></br>
+          <h4>Круговая диаграмма</h4>
+    <div id="air" style="width: 500px; height: 400px;"></div>
+
+
+
+
       </div>
     </div>
   </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
 
 
 

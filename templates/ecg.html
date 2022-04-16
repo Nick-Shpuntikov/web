@@ -20,15 +20,21 @@
   </header>
 
   <main>
-    <!--Место для файла-->
-<div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-          <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">Загрузите ваш файл</h4>
-          </div>
-          <div class="card-body">
+    <!--БЛОК С ФАЙЛОМ Место для файла-->
 
-
+    <div id="faq3" role="tablist" aria-multiselectable="true">
+  <div class="card">
+    <div class="card-header" role="tab" id="questionOne3">
+      <h5 class="card-title">
+        <a data-toggle="collapse" data-parent="#faq" href="#answerOne3"
+          aria-expanded="true" aria-controls="answerOne3">
+          Загрузка файла
+        </a>
+     </h5>
+    </div>
+<div id="answerOne3" class="collapse show" role="tabcard" aria-labelledby="questionOne">
+     <div class="card-body">
+<!--Наполнение блока-->
 <!--Загрузка самого файла (пока только картинка jpg)-->
             <div style= class="container">
               <div class="row mb-3">
@@ -49,9 +55,12 @@
 
             <ul class="list-unstyled mt-3 mb-4">
             </ul>
-          </div>
-        </div>
-      </div>
+     </div>
+    </div>
+  </div>
+
+
+
 
 
 <!--&lt;!&ndash;Кнопка "Оценить"&ndash;&gt;-->
@@ -60,6 +69,22 @@
 <!--      </div>-->
 
 
+
+<!--БЛОК ТАБЛИЦА-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<div id="faq4" role="tablist" aria-multiselectable="true">
+      <div class="card">
+    <div class="card-header" role="tab" id="questionThree4">
+      <h5 class="card-title">
+        <a class="collapsed4" data-toggle="collapse" data-parent="#faq4"
+          href="#answerThree4" aria-expanded="true" aria-controls="answerThree4">
+          Тестовая таблица
+        </a>
+      </h5>
+    </div>
+    <div id="answerThree4" class="collapse in" role="tabcard" aria-labelledby="questionThree">
+      <div class="card-body">
+<!--Наполнение блока-->
 <!--Таблица-->
 <table class="table table-hover">
   <thead>
@@ -93,15 +118,30 @@
 </table>
 
 
+            </div>
+    </div>
+  </div>
 
 
- <!--Поле прямоугольное-->
-<div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-          <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">Выберите методы оценки качества</h4>
-          </div>
-          <div class="card-body">
+
+
+
+  <!--Методы-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<div id="faq2" role="tablist" aria-multiselectable="true">
+      <div class="card">
+    <div class="card-header" role="tab" id="questionThree2">
+      <h5 class="card-title">
+        <a class="collapsed2" data-toggle="collapse" data-parent="#faq"
+          href="#answerThree2" aria-expanded="true" aria-controls="answerThree">
+          Выберите методы оценки качества
+        </a>
+      </h5>
+    </div>
+    <div id="answerThree2" class="collapse in" role="tabcard" aria-labelledby="questionThree">
+      <div class="card-body">
+
+<!--Наполнение блока Методы-->
 <!--Чекбоксы-->
               <div>
                 <div class="box">
@@ -121,25 +161,33 @@
              </p>
                   <ul class="list-unstyled mt-3 mb-4">
             </ul>
-          </div>
-        </div>
+
+
+
+</div>
+    </div>
+  </div>
 </div>
 
 
 
+      <!--Аналитика-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<div id="faq" role="tablist" aria-multiselectable="true">
+      <div class="card">
+    <div class="card-header" role="tab" id="questionThree">
+      <h5 class="card-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#faq"
+          href="#answerThree" aria-expanded="true" aria-controls="answerThree">
+          Аналитика
+        </a>
+      </h5>
+    </div>
+    <div id="answerThree" class="collapse in" role="tabcard" aria-labelledby="questionThree">
+      <div class="card-body">
 
-<!--Аналитика-->
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-          <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">Аналитика</h4>
-          </div>
-          <div class="card-body">
-<!--что-то-->
-
-
-
-<!-- Таблица1-->
+<!--Наполнение блока Аналитика-->
+          <!-- Таблица1-->
               <h5>Матрица ошибок модели оценки качества</h5>
               <style>
 	/* Стили таблицы (IKSWEB) */
@@ -294,12 +342,16 @@
 
 
 
-
-      <ul class="list-unstyled mt-3 mb-4">
-            </ul>
-          </div>
-        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+
+
 
 
 </main>

@@ -1,14 +1,17 @@
 from flask import Flask, render_template, url_for
 import pandas as pd
-
+from main_open import test
 app = Flask(__name__)
 
 
 
 @app.route('/')
-@app.route('/home')
 def home():
-    return render_template('ecg.html')
+    result0 = test()[0]
+    result1 = test()[1]
+    result2 = test()[2]
+    result3 = test()[3]
+    return render_template('ecg.html', v0=result0, v1=result1, v2=result2, v3=result3)
 
 @app.route('/about_us')
 def about_us():
@@ -22,3 +25,5 @@ def products():
 
 if __name__ == '__main__':
     app.run(host='localhost', debug=True)
+
+

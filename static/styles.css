@@ -78,7 +78,73 @@ small {
   }
 }
 
+.lbblock{
+float: left; /*Задаем обтекание*/
+        width: 320px; /*Фиксируем ширину блока*/
+        margin-left: 200px;
+        text-align: center; /*Центрируем текст по горизонтали*/
 
+}
+.rbblock{
+float: right; /*Задаем обтекание*/
+        width: 320px; /*Фиксируем ширину блока*/
+        margin-right: 200px;
+        text-align: center; /*Центрируем текст по горизонтали*/
+
+}
+
+
+/*Стиль таблицы*/
+table {
+  overflow: hidden;
+}
+
+td, th {
+  padding: 10px;
+  position: relative;
+  outline: 0;
+}
+
+body:not(.nohover) tbody tr:hover {
+  background-color: #50c6d8;
+}
+
+td:hover::after,
+thead th:not(:empty):hover::after,
+td:focus::after,
+thead th:not(:empty):focus::after {
+  content: '';
+  height: 10000px;
+  left: 0;
+  position: absolute;
+  top: -5000px;
+  width: 100%;
+  z-index: -1;
+}
+
+td:hover::after,
+th:hover::after {
+  background-color: #ffa;
+}
+
+td:focus::after,
+th:focus::after {
+  background-color: lightblue;
+}
+
+/* Focus stuff for mobile */
+td:focus::before,
+tbody th:focus::before {
+  background-color: lightblue;
+  content: '';
+  height: 100%;
+  top: 0;
+  left: -5000px;
+  position: absolute;
+  width: 10000px;
+  z-index: -1;
+}
+/*Конец стиля таблицы*/
 
 
 

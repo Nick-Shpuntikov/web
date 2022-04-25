@@ -36,22 +36,27 @@
      <div class="card-body">
 <!--Наполнение блока-->
 <!--Загрузка самого файла (пока только картинка jpg)-->
-            <div style= class="container">
-              <div class="row mb-3">
-                  <div class="col-md-12">
-                     <form action="upload-one-file.php" method="POST" enctype="multipart/form-data" class="form-inline md-form">
+<!--            <div style= class="container">-->
+<!--              <div class="row mb-3">-->
+<!--                  <div class="col-md-12">-->
+<!--                     <form action="upload-one-file.php" method="POST" enctype="multipart/form-data" class="form-inline md-form">-->
 
-                          <div class="input-group">
-                              <div class="custom-file">
-                                  <input type="file" name="file_img" id="file_img" required>
-                              </div>
-                          </div>
+<!--                          <div class="input-group">-->
+<!--                              <div class="custom-file">-->
+<!--                                  <input type="file" name="file_img" id="file_img" required>-->
+<!--                              </div>-->
+<!--                          </div>-->
 
-                          <button type="submit" name="upload_image" class="btn btn-primary">Загрузить файл</button>
-                      </form>
-                  </div>
-             </div>
-            </div>
+<!--                          <button type="submit" name="upload_image" class="btn btn-primary">Загрузить файл</button>-->
+<!--                      </form>-->
+<!--                  </div>-->
+<!--             </div>-->
+<!--            </div>-->
+
+<form method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=submit value=Загрузить>
+    </form>
 
             <ul class="list-unstyled mt-3 mb-4">
             </ul>
@@ -86,36 +91,56 @@
       <div class="card-body">
 <!--Наполнение блока-->
 <!--Таблица-->
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">ФИО</th>
-      <th scope="col">Дата съема</th>
-      <th scope="col">ЭКГ</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Иванов И. И.</td>
-      <td>10.03.22</td>
-      <td>[]</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Петухов П.П.</td>
-      <td>02.03.22</td>
-      <td>[]</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Козлов К.К.</td>
-      <td>02.03.22</td>
-      <td>[]</td>
-    </tr>
-  </tbody>
-</table>
+
+   <div align="center">
+            <table id="autotable" class="table-responsive">
+                <h1>
+                <!--Displaying the converted table-->
+                     {% for table in tables %}
+                    <h2>{{titles[loop.index]}}</h2>
+                    {{ table|safe }}
+                    {% endfor %}
+                </h1>
+            </table>
+        </div>
+
+
+
+
+
+
+
+
+<!--          <table class="table table-hover">-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th scope="col">#</th>-->
+<!--      <th scope="col">ФИО</th>-->
+<!--      <th scope="col">Дата съема</th>-->
+<!--      <th scope="col">ЭКГ</th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--    <tr>-->
+<!--      <th scope="row">1</th>-->
+<!--      <td>Иванов И. И.</td>-->
+<!--      <td>10.03.22</td>-->
+<!--      <td>[]</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th scope="row">2</th>-->
+<!--      <td>Петухов П.П.</td>-->
+<!--      <td>02.03.22</td>-->
+<!--      <td>[]</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th scope="row">3</th>-->
+<!--      <td>Козлов К.К.</td>-->
+<!--      <td>02.03.22</td>-->
+<!--      <td>[]</td>-->
+<!--    </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
 
             </div>
     </div>
@@ -349,22 +374,43 @@
    google.setOnLoadCallback(drawChart);
    function drawChart() {
     var data = google.visualization.arrayToDataTable([
-     ['Газ', 'Объём'],
+     ['Выборка', '%'],
      ['Качественные',     75],
      ['Некачественные', 25]
     ]);
     var options = {
      title: 'Результаты анализа',
      is3D: true,
+     chartArea: {width:'100%',height:'100%'},
     };
     var chart = new google.visualization.PieChart(document.getElementById('air'));
+     chart.draw(data, options);
+   }
+  </script>
+
+          <script>
+   google.load("visualization", "1", {packages:["corechart"]});
+   google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+     ['Выборка', '%'],
+     ['Качественные',     75],
+     ['Некачественные', 25]
+    ]);
+    var options = {
+     title: 'Результаты анализа',
+     is3D: true,
+     chartArea: {width:'100%',height:'100%'},
+    };
+    var chart = new google.visualization.PieChart(document.getElementById('air2'));
      chart.draw(data, options);
    }
   </script>
           <br></br>
           <h4>Круговая диаграмма</h4>
 
-    <div id="air" style="width: 500px; height: 400px;"></div>
+    <div class="lbblock", id="air"></div>
+          <div class="rbblock" id="air2"></div>
 
 
 

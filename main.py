@@ -37,8 +37,8 @@ def home():
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], 'data.csv'))
         # return redirect(url_for('download_file', name=filename))
         data = pd.read_csv('ecgs/data.csv', sep=",")
-        return render_template('ecg.html', v0=result0, v1=result1, v2=result2, v3=result3, tables=[data.to_html()],
-                               titles=[''])
+        df_html = data.to_html()
+        return render_template('ecg.html', v0=result0, v1=result1, v2=result2, v3=result3) % df_html
     return render_template('ecg.html', v0=result0, v1=result1, v2=result2, v3=result3)
 
 

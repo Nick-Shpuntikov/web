@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 import scipy
 from imblearn.over_sampling import SMOTE
+from matplotlib import pyplot as plt
+from matplotlib.ticker import MaxNLocator
 from scipy.signal import butter, filtfilt, iirnotch, savgol_filter, lfilter
 from biosppy.signals.ecg import fSQI
 from sklearn.model_selection import train_test_split, cross_val_score, LeaveOneOut
@@ -24,6 +26,7 @@ from sklearn.svm import SVC
 from imblearn.combine import SMOTETomek
 from imblearn.over_sampling import SMOTE
 import neurokit2 as nk2
+import seaborn as sns
 
 
 cutoff_high = 0.5
@@ -954,6 +957,30 @@ def test():
     result = calculate_sensitivity_predicted(data)
 
     return result
+
+
+total_list = []
+failed_list = []
+def generate_tf_graph(total_requests, failed_requests):
+    """Total/Failed graph"""
+    ax = plt.figure().gca()
+    plt.subplots_adjust(left=0.15)
+    ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+    ax.xaxis.set_major_locator(MaxNLocator(integer=True))
+    total_list.append(total_requests)
+    failed_list.append(failed_requests)
+    ax.set_ylabel('Total requests', fontsize=14)
+    ax.set_xlabel('Failed requests', fontsize=14)
+    df = pd.DataFrame(list(zip(failed_list, total_list)),
+                      columns=['Failed', 'Total'])
+    sns.lineplot(data=df, x="Failed", y="Total")
+    plt.savefig('static/total-failed.png')
+    plt.close()
+
+generate_tf_graph(10,4)
+generate_tf_graph(20,8)
+generate_tf_graph(30,10)
+
 
 
 

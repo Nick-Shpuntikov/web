@@ -83,26 +83,18 @@
       <h5 class="card-title">
         <a class="collapsed4" data-toggle="collapse" data-parent="#faq4"
           href="#answerThree4" aria-expanded="true" aria-controls="answerThree4">
-          Тестовая таблица
+          Таблица с данными
         </a>
       </h5>
     </div>
     <div id="answerThree4" class="collapse in" role="tabcard" aria-labelledby="questionThree">
-      <div class="card-body">
+      <div class="card-body">%s%s%s%s%s<script type="text/javascript">$(document).ready(function(){$('table').DataTable({
+    "pageLength": 50
+});});</script>
 <!--Наполнение блока-->
 <!--Таблица-->
 
-   <div align="center">
-            <table id="autotable" class="table-responsive">
-                <h1>
-                <!--Displaying the converted table-->
-                     {% for table in tables %}
-                    <h2>{{titles[loop.index]}}</h2>
-                    {{ table|safe }}
-                    {% endfor %}
-                </h1>
-            </table>
-        </div>
+
 
 
 
@@ -425,7 +417,7 @@
 
 
 
-
+<img src='static/total-failed.png'/>
 
 
 
